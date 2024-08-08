@@ -1,6 +1,6 @@
 import React, { useEffect, useState ,useRef} from 'react'
 import axios from 'axios';
-
+import styles from './XCountriesSearch.module.css'
 const XCountriesSearch = () => {
     const [data,setData]=useState([]);
     const [searchval,setSearchval]=useState('')
@@ -55,7 +55,7 @@ const XCountriesSearch = () => {
     <input type="text" onChange={handleSearch} value={searchval} style={{width:'50%',height:'70%'}}/>
     </div>
     
-    <div style={{display:"flex",flexWrap:'wrap',alignItems:'center',justifyContent:'space-between',textAlign:"center"}}>
+    <div className={styles.countryCard}>
     {
         data.map((item)=>{
             return (

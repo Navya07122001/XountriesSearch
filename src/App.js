@@ -1,4 +1,4 @@
-import XCountriesSearch from "./Components/XCountriesSearch";
+import XCountriesSearch from "./Components/XCountriesSearch/XCountriesSearch";
 
 
 function App() {
