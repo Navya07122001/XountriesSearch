@@ -13,14 +13,17 @@ const XCountriesSearch = () => {
     const fetchData=async(val)=>{
     
         try{
-         const response=await axios.get("https://xcountries-backend.azurewebsites.net/all")
+         const response=await axios.get("https://restcountries.com/v3.1/all")
+         
          const data1=await response.data;
+         console.log(data1)
+         console.log(val)
            if(!val)
            {
             setData(data1)
             return
            }
-            const res=await data1.filter((ele)=>(ele.name.toLowerCase().includes(val.toLowerCase())))
+            const res=await data1.filter((ele)=>(ele.name.common.toLowerCase().includes(val.toLowerCase())))
             console.log(res)
          setData(res);
          
@@ -68,8 +71,8 @@ const XCountriesSearch = () => {
         data.map((item)=>{
             return (
             <div style={{border:'1px solid black',borderRadius:"5px",padding:"10px", margin:"10px",height:"110px",width:"120px"}}>
-              <img src={item.flag} alt="img" style={{height:"65px",width:"65px"}}/>
-              <div style={{fontSize:"13px",fontWeight:600}}>{item.name}</div>
+              <img src={item.flags.png} alt="img" style={{height:"65px",width:"65px"}}/>
+              <div style={{fontSize:"13px",fontWeight:600}}>{item.name.common}</div>
             </div> )
         })
     }
