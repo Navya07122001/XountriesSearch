@@ -1,9 +1,15 @@
-.countryCard{
-   
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        text-align: center;
-      
+.countryCard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center items horizontally */
+    text-align: center;
+    height: 100vh; /* Full viewport height */
+}
+
+.container {
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    height: 100vh; /* Full viewport height */
+    width: 100%; /* Full viewport width */
 }

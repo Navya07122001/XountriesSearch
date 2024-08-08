@@ -54,7 +54,7 @@ const XCountriesSearch = () => {
     <div style={{height:"50px",background:'grey',alignContent:'center',textAlign:'center'}}>
     <input type="text" onChange={handleSearch} value={searchval} style={{width:'50%',height:'70%'}}/>
     </div>
-    
+    <div className={styles.container}>
     <div className={styles.countryCard}>
     {
         data.map((item)=>{
@@ -65,6 +65,7 @@ const XCountriesSearch = () => {
             </div> )
         })
     }
+    </div>
     </div>
     </>
   )
