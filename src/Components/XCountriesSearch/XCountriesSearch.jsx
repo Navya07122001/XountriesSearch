@@ -55,17 +55,19 @@ const XCountriesSearch = () => {
     <input type="text" onChange={handleSearch} value={searchval} style={{width:'50%',height:'70%'}}/>
     </div>
     <div className={styles.container}>
-    <div className={styles.countryCard}>
+    
     {
         data.map((item)=>{
             return (
+                <div  key={item.cca3} className={styles.countryCard}>
             <div style={{border:'1px solid black',borderRadius:"5px",padding:"10px", margin:"10px",height:"110px",width:"120px"}}>
               <img src={item.flags.png} alt="img" style={{height:"65px",width:"65px"}}/>
               <div style={{fontSize:"13px",fontWeight:600}}>{item.name.common}</div>
+            </div>
             </div> )
         })
     }
-    </div>
+   
     </div>
     </>
   )

@@ -1,15 +1,17 @@
+.container {
+    display: flex;
+    justify-content: center; 
+    height: 100vh; /* Full viewport height */
+    width: 100%; /* Full viewport width */
+    flex-wrap: wrap; /* Allow wrapping of cards */
+    align-items: flex-start;
+}
+
 .countryCard {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Center items horizontally */
+    align-items: center;
+    justify-content: center; /* Center items within each card */
     text-align: center;
-    height: 100vh; /* Full viewport height */
-}
-
-.container {
-    display: flex;
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */
-    height: 100vh; /* Full viewport height */
-    width: 100%; /* Full viewport width */
+    margin: 10px;
 }
