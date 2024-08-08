@@ -4,31 +4,19 @@ import axios from 'axios';
 const XCountriesSearch = () => {
     const [data,setData]=useState([]);
     const [searchval,setSearchval]=useState('')
-    const [filterdata,setFilterdata]=useState([])
-    const ref=useRef();
+   
     const handleSearch=(e)=>{
         setSearchval(e.target.value)
         
-    }
-    const fetchData=async(val)=>{
-    
+    };
+    const fetchData=async(val='')=>{
         try{
          const response=await axios.get("https://restcountries.com/v3.1/all")
          
-         const data1=await response.data;
-         console.log(data1)
-         console.log(val)
-           if(!val)
-           {
-            setData(data1)
-            return
-           }
-            const res=await data1.filter((ele)=>(ele.name.common.toLowerCase().includes(val.toLowerCase())))
-            console.log(res)
+         const data1= response.data;
+         const res= data1.filter((ele)=>(ele.name.common.toLowerCase().includes(val.toLowerCase())))
+          
          setData(res);
-         
-         
-        
         }
         catch(e){
             console.error("Error fetching data: ")
@@ -53,17 +41,18 @@ const XCountriesSearch = () => {
         fetchData();
     },[])
     useEffect(()=>{
-       
-        if(searchval)
+         if(searchval)
         {
-            
-            debouncedSearch(searchval)
+             debouncedSearch(searchval);
+        }
+        else{
+            fetchData();
         }
     },[searchval])
   return (
     <>
     <div style={{height:"50px",background:'grey',alignContent:'center',textAlign:'center'}}>
-    <input type="text" onChange={handleSearch} style={{width:'50%',height:'70%'}}/>
+    <input type="text" onChange={handleSearch} value={searchval} style={{width:'50%',height:'70%'}}/>
     </div>
     
     <div style={{display:"flex",flexWrap:'wrap',alignItems:'center',justifyContent:'space-between',textAlign:"center"}}>
