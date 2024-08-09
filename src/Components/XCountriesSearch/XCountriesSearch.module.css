@@ -1,9 +1,9 @@
 .container {
     display: flex;
     justify-content: center; 
-    height: 100vh; /* Full viewport height */
-    width: 100%; /* Full viewport width */
-    flex-wrap: wrap; /* Allow wrapping of cards */
+    height: 100vh;
+    width: 100%; 
+    flex-wrap: wrap; 
     align-items: flex-start;
 }
 
@@ -11,7 +11,11 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center; /* Center items within each card */
+    justify-content: center; 
     text-align: center;
     margin: 10px;
+}
+.flag{
+    height: 65px;
+    width: 65px;
 }
